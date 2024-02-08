@@ -47,12 +47,12 @@ variable "firewall_mgmt_subnet_address_prefix" {
 
 variable "dns_resolver_in_subnet_address_prefix" {
   description = "Private DNS resolver in subnet in CIDR format|8|cidr_range"
-  type        = string
+  type        = list(string)
 }
 
 variable "dns_resolver_out_subnet_address_prefix" {
   description = "Private DNS resolver out subnet in CIDR format|8|cidr_range"
-  type        = string
+  type        = list(string)
 }
 
 variable "gateway_subnet_address_prefix" {

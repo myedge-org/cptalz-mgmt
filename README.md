@@ -36,6 +36,35 @@ gh pr create --title "init-infra" --body "init infrastructure" --base main
 
 Approve the pull request and merge it via the web interface.
 
+## Add subnets to hub
+
+~~~bash
+# go to branch main
+git checkout main
+# pull the lastest changes
+git pull
+# show the current branch
+git branch --show-current # should be main
+# create branch to change fw sku
+git branch add-dns-subnets
+# switch to the new branch
+git checkout add-dns-subnets
+~~~
+
+Modify the main.tf file to change the firewall sku to basic.
+
+### Commit and Pull requewst via github cli
+
+~~~bash
+# get current git status
+git status
+# commit all your changes
+git add .
+git commit -am "Add subnets for DNS"
+git push --set-upstream origin add-dns-subnets
+gh pr create --title "add-dns-subnets" --body "add subnets for dns" --base main
+~~~
+
 ## Add a first landing zone
 
 ### New branch
