@@ -3,7 +3,8 @@ terraform {
   required_providers {
     azurerm = "~> 3.88"
   }
-  backend "azurerm" {}
+  backend "azurerm" {
+  }
 }
 
 provider "azurerm" {
@@ -22,5 +23,17 @@ provider "azurerm" {
   skip_provider_registration = true
   alias                      = "connectivity"
   subscription_id            = var.subscription_id_connectivity
+  features {}
+}
+
+provider "azurerm" {
+  alias           = "identity"
+  subscription_id = var.subscription_id_identity
+  features {}
+}
+
+provider "azurerm" {
+  alias           = "lz1"
+  subscription_id = "a2c4c615-592b-46a7-b30f-54ccd174bddf"
   features {}
 }

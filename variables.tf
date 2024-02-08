@@ -3,35 +3,50 @@ variable "default_location" {
   type        = string
 }
 
-variable "default_postfix" {
-  description = "The default postfix for Azure resources. (e.g 'landing-zone')|2|azure_name"
-  type        = string
-  default     = "landing-zone"
-}
-
-variable "root_parent_management_group_id" {
-  description = "This is the id of the management group that the ALZ hierarchy will be nested under, will default to the Tenant Root Group|3|azure_name"
-  type        = string
-  default     = ""
-}
-
-variable "subscription_id_management" {
-  description = "value of the subscription id for the Management subscription|4|azure_subscription_id"
-  type        = string
-}
-
 variable "subscription_id_connectivity" {
-  description = "value of the subscription id for the Connectivity subscription|5|azure_subscription_id"
+  description = "The identifier of the Connectivity Subscription. (e.g '00000000-0000-0000-0000-000000000000')|2|azure_subscription_id"
   type        = string
 }
 
 variable "subscription_id_identity" {
-  description = "value of the subscription id for the Identity subscription|6|azure_subscription_id"
+  description = "The identifier of the Identity Subscription. (e.g '00000000-0000-0000-0000-000000000000')|3|azure_subscription_id"
   type        = string
 }
 
-variable "configuration_file_path" {
-  description = "The path of the configuration file|7|configuration_file_path"
+variable "subscription_id_management" {
+  description = "The identifier of the Management Subscription. (e.g 00000000-0000-0000-0000-000000000000)|4|azure_subscription_id"
   type        = string
-  default     = ""
+}
+
+variable "root_id" {
+  description = "The root id is the identity for the root management group and a prefix applied to all management group identities|5|azure_name"
+  type        = string
+  default     = "es"
+}
+
+variable "root_name" {
+  description = "The display name for the root management group|6|azure_name"
+  type        = string
+  default     = "Enterprise-Scale"
+}
+
+variable "hub_virtual_network_address_prefix" {
+  description = "The IP address range for the hub network in CIDR format|7|cidr_range"
+  type        = string
+}
+
+variable "firewall_subnet_address_prefix" {
+  description = "The IP address range foe the firewall subnet in CIDR format|8|cidr_range"
+  type        = string
+}
+
+variable "gateway_subnet_address_prefix" {
+  description = "The IP address range foe the gateway subnet in CIDR format|9|cidr_range"
+  type        = string
+}
+
+variable "virtual_network_gateway_creation_enabled" {
+  description = "Whether the virtual network gateway is created|10|bool"
+  type        = bool
+  default     = false
 }
