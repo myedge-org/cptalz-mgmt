@@ -40,30 +40,30 @@ module "hubnetworking" {
         sku_tier                         = "Basic"
         sku_name                         = "AZFW_VNet"
       }
-      # subnets = {
-      #   dnsInboundSubnet = {
-      #     name             = "subnet-dns-in"
-      #     address_prefixes = var.dns_resolver_in_subnet_address_prefix
-      #     delegations = [{
-      #       name = "Microsoft.Network.dnsResolvers"
-      #       service_delegation = {
-      #         actions = ["Microsoft.Network/virtualNetworks/subnets/join/action"]
-      #         name    = "Microsoft.Network/dnsResolvers"
-      #       }
-      #     }]
-      #   },
-      #   dnsOutboundSubnet = {
-      #     name             = "subnet-dns-out"
-      #     address_prefixes = var.dns_resolver_out_subnet_address_prefix
-      #     delegations = [{
-      #       name = "Microsoft.Network.dnsResolvers"
-      #       service_delegation = {
-      #         actions = ["Microsoft.Network/virtualNetworks/subnets/join/action"]
-      #         name    = "Microsoft.Network/dnsResolvers"
-      #       }
-      #     }]
-      #   }
-      # }
+      subnets = {
+        dnsInboundSubnet = {
+          name             = "subnet-dns-in"
+          address_prefixes = var.dns_resolver_in_subnet_address_prefix
+          delegations = [{
+            name = "Microsoft.Network.dnsResolvers"
+            service_delegation = {
+              actions = ["Microsoft.Network/virtualNetworks/subnets/join/action"]
+              name    = "Microsoft.Network/dnsResolvers"
+            }
+          }]
+        },
+        dnsOutboundSubnet = {
+          name             = "subnet-dns-out"
+          address_prefixes = var.dns_resolver_out_subnet_address_prefix
+          delegations = [{
+            name = "Microsoft.Network.dnsResolvers"
+            service_delegation = {
+              actions = ["Microsoft.Network/virtualNetworks/subnets/join/action"]
+              name    = "Microsoft.Network/dnsResolvers"
+            }
+          }]
+        }
+      }
     }
   }
 
@@ -102,18 +102,18 @@ module "virtual_network_gateway" {
   ]
 }
 
-# module "private_dns_resolver" {
-#   source = "./dnsserver"
+module "private_dns_resolver" {
+  source = "./dnsserver"
 
-#   location             = var.default_location
-#   name                 = "dns-resolver-primary-hub"
-#   resource_group_name  = "rg-connectivity-${var.default_location}"
-#   virtual_network_name = module.hubnetworking.virtual_networks["primary-hub"].name
-#   subnet_inbound_name  = "dnsInboundSubnet"
-#   subnet_outbound_name = "dnsOutboundSubnet"
+  location             = var.default_location
+  name                 = "dns-resolver-primary-hub"
+  resource_group_name  = "rg-connectivity-${var.default_location}"
+  virtual_network_name = module.hubnetworking.virtual_networks["primary-hub"].name
+  subnet_inbound_name  = "dnsInboundSubnet"
+  subnet_outbound_name = "dnsOutboundSubnet"
 
-#   depends_on = [
-#     module.hubnetworking
-#   ]
+  depends_on = [
+    module.hubnetworking
+  ]
 
-# }
+}
