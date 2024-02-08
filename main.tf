@@ -29,7 +29,7 @@ module "hubnetworking" {
 
   hub_virtual_networks = {
     primary-hub = {
-      resource_group_lock_enabled = true
+      resource_group_lock_enabled = false
       name                        = "vnet-hub-${var.default_location}"
       address_space               = [var.hub_virtual_network_address_prefix]
       location                    = var.default_location
