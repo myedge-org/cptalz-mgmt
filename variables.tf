@@ -45,6 +45,11 @@ variable "firewall_mgmt_subnet_address_prefix" {
   type        = string
 }
 
+variable "gateway_subnet_address_prefix" {
+  description = "The IP address range foe the gateway subnet in CIDR format|9|cidr_range"
+  type        = string
+}
+
 variable "dns_resolver_in_subnet_address_prefix" {
   description = "Private DNS resolver in subnet in CIDR format|8|cidr_range"
   type        = list(string)
@@ -53,11 +58,6 @@ variable "dns_resolver_in_subnet_address_prefix" {
 variable "dns_resolver_out_subnet_address_prefix" {
   description = "Private DNS resolver out subnet in CIDR format|8|cidr_range"
   type        = list(string)
-}
-
-variable "gateway_subnet_address_prefix" {
-  description = "The IP address range foe the gateway subnet in CIDR format|9|cidr_range"
-  type        = string
 }
 
 variable "virtual_network_gateway_creation_enabled" {
