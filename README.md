@@ -119,7 +119,6 @@ git add .
 git commit -am "create VPN gateway"
 git push --set-upstream origin turn-on-vpn
 gh pr create --title "turn-on-vpn" --body "create VPN gateway" --base main
-
 ~~~
 
 ## Add a first landing zone
