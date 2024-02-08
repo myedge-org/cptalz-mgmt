@@ -60,7 +60,7 @@ Modify the main.tf file to change the firewall sku to basic.
 git status
 # commit all your changes
 git add .
-git commit -am "Add subnets for DNS"
+git commit -am "Add subnets for DNS with array"
 git push --set-upstream origin add-dns-subnets
 gh pr create --title "add-dns-subnets" --body "add subnets for dns" --base main
 ~~~
