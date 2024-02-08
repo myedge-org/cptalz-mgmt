@@ -1,5 +1,3 @@
-misc/*
-.env
 # Created by https://www.toptal.com/developers/gitignore/api/terraform
 # Edit at https://www.toptal.com/developers/gitignore?templates=terraform
 
@@ -40,3 +38,9 @@ override.tf.json
 terraform.rc
 
 # End of https://www.toptal.com/developers/gitignore/api/terraform
+
+# my ignores
+misc/*
+.env
+terraform.tf
+.terraform.lock.hcl
