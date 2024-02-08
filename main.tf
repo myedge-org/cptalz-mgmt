@@ -39,6 +39,16 @@ module "hubnetworking" {
         sku_tier                         = "Basic"
         sku_name                         = "AZFW_VNet"
       }
+      subnets = {
+        dns_in = {
+          name           = "subnet-dns-in"
+          address_prefix = var.dns_resolver_in_subnet_address_prefix
+        },
+        dns_out = {
+          name           = "subnet-dns-out"
+          address_prefix = var.dns_resolver_out_subnet_address_prefix
+        }
+      }
     }
   }
 
