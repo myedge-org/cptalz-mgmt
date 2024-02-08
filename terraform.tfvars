@@ -15,5 +15,5 @@ root_name = "cptalz"
 subscription_id_connectivity             = "f474dec9-5bab-47a3-b4d3-e641dac87ddb"
 subscription_id_identity                 = "f474dec9-5bab-47a3-b4d3-e641dac87ddb"
 subscription_id_management               = "f474dec9-5bab-47a3-b4d3-e641dac87ddb"
-virtual_network_gateway_creation_enabled = false
+virtual_network_gateway_creation_enabled = true
 
