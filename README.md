@@ -116,10 +116,10 @@ Modify the main.tf file, turn on vpn.
 git status
 # commit all your changes
 git add .
-git commit -am "Add private DNS resolver "
-git push --set-upstream origin add-dns-subnets
-gh pr create --title "delete subnets" --body "delete subnets" --base main
-gh pr create --title "add-private-dns-resolver" --body "add private dns resolver" --base main
+git commit -am "create VPN gateway"
+git push --set-upstream origin turn-on-vpn
+gh pr create --title "turn-on-vpn" --body "create VPN gateway" --base main
+
 ~~~
 
 ## Add a first landing zone
