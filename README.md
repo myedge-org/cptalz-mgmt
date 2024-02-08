@@ -65,6 +65,63 @@ git push --set-upstream origin add-dns-subnets
 gh pr create --title "add-dns-subnets" --body "add subnets for dns" --base main
 ~~~
 
+## Add private dns resolver
+
+Modify the main.tf file to change the firewall sku to basic.
+
+### Commit and Pull requewst via github cli
+
+~~~bash
+# get current git status
+git status
+# commit all your changes
+git add .
+git commit -am "Add private DNS resolver "
+git push --set-upstream origin add-dns-subnets
+gh pr create --title "delete subnets" --body "delete subnets" --base main
+gh pr create --title "add-private-dns-resolver" --body "add private dns resolver" --base main
+~~~
+
+### Commit and Pull requewst via github cli
+
+~~~bash
+# get current git status
+git status
+# commit all your changes
+git add .
+git commit -am "Add subnets for DNS with array"
+git push --set-upstream origin add-dns-subnets
+gh pr create --title "add-dns-subnets" --body "add subnets for dns" --base main
+~~~
+
+## Establish a Site to Site VPN
+
+~~~bash
+# go to branch main
+git checkout main
+# pull the lastest changes
+git pull
+# create branch to change fw sku
+git branch turn-on-vpn
+# switch to the new branch
+git checkout turn-on-vpn
+~~~
+
+Modify the main.tf file, turn on vpn.
+
+### Commit and Pull requewst via github cli
+
+~~~bash
+# get current git status
+git status
+# commit all your changes
+git add .
+git commit -am "Add private DNS resolver "
+git push --set-upstream origin add-dns-subnets
+gh pr create --title "delete subnets" --body "delete subnets" --base main
+gh pr create --title "add-private-dns-resolver" --body "add private dns resolver" --base main
+~~~
+
 ## Add a first landing zone
 
 ### New branch
