@@ -7,7 +7,7 @@ terraform {
     resource_group_name  = "rg-cptalz-mgmt-state-germanywestcentral-001"
     storage_account_name = "stocptalzmgmtger001newj"
     container_name       = "mgmt-tfstate"
-    key                  = "dev.terraform.tfstate"
+    key                  = "terraform.tfstate"
     use_azuread_auth     = true
     subscription_id      = "f474dec9-5bab-47a3-b4d3-e641dac87ddb"
     tenant_id            = "0BA83D3D-0644-4916-98C0-D513E10DC917"
