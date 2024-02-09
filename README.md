@@ -65,6 +65,35 @@ git push --set-upstream origin add-dns-subnets
 gh pr create --title "add-dns-subnets" --body "add subnets for dns" --base main
 ~~~
 
+## Add VPN Gateway
+
+~~~bash
+# go to branch main
+git checkout main
+# pull the lastest changes
+git pull
+# show the current branch
+git branch --show-current # should be main
+# create branch to change fw sku
+git branch add-vpn
+# switch to the new branch
+git checkout add-vpn
+~~~
+
+Modify the main.tf file to change the firewall sku to basic.
+
+### Commit and Pull requewst via github cli
+
+~~~bash
+# get current git status
+git status
+# commit all your changes
+git add .
+git commit -am "add-vpn"
+git push --set-upstream origin add-vpn
+gh pr create --title "add-vpn" --body "add vpn" --base main
+~~~
+
 ## Add a first landing zone
 
 ### New branch
